@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body style="display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+    <fieldset style="width: fit-content;">
+        <legend>Personal Details</legend><br>
+        <form action="" method="GET" id="details">
+            Name: <input type="text" name="name" id="name">
+            <div id="namediv"></div><br>
+            Gender: <input type="radio" name="gender" id="genderm">Male <input type="radio" name="gender" id="genderf">Female
+            <div id="gendiv"></div><br>
+            Address: <input type="text" name="address" id="address">
+            <div id="adddiv"></div><br>
+            E-mail: <input type="email" name="email" id="email">
+            <div id="emaildiv"></div><br>
+            <button type="submit" onclick="return Check()">Submit</button>
+        </form>
+    </fieldset>
+    <script>
+        function Check(){
+            var name = document.getElementById('name').value;
+            var genderm = document.getElementById('genderm').checked;
+            var genderf = document.getElementById('genderf').checked;
+            var address = document.getElementById('address').value;
+            var email = document.getElementById('email').value;
+            if(name == ""){
+                document.getElementById('namediv').innerHTML = 'Please enter name';
+                setTimeout(function(){ document.getElementById('namediv').innerHTML = ''},5000);
+                return false;
+            }
+            else if(!genderm && !genderf){
+                document.getElementById('gendiv').innerHTML = 'Please pick gender';
+                setTimeout(function(){ document.getElementById('gendiv').innerHTML = ''},6000);
+                return false;
+            }
+            else if(address == ""){
+                document.getElementById('adddiv').innerHTML = 'Please enter address';
+                setTimeout(function(){ document.getElementById('adddiv').innerHTML = ''},6000);
+                return false;
+            }
+            else if(email == ""){
+                document.getElementById('emaildiv').innerHTML = 'Please enter email';
+                setTimeout(function(){ document.getElementById('emaildiv').innerHTML = ''},6000);
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
