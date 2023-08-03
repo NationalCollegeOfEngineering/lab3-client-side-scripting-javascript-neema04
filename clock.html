@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <script>
+        function showDate() {
+            setInterval(function () {
+                document.getElementById("current-date-time").innerHTML = new Date();
+            }, 700);
+        }
+        function showTime() {
+            setInterval(function () {
+                var time = new Date();
+                var hours = time.getHours();
+                var minutes = time.getMinutes();
+                var seconds = time.getSeconds();
+                var onlytime = hours + ":" + minutes + ":" + seconds;
+                document.getElementById("current-time").innerHTML = onlytime;
+            },600);
+        }
+    </script>
+</head>
+
+<body onload="showDate(),showTime()">
+    <h1>Displaying the clock with date :</h1>
+    <p id="current-date-time"></p>
+    <br><hr>
+    <h1>Displaying only the clock without date :</h1>
+    <p id="current-time"></p>
+</body>
+
+</html>
